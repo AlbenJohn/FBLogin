@@ -1,14 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bb3-QG-IXg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="yAp-SF-dgl">
+            <objects>
+                <navigationController id="Bb3-QG-IXg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1hw-h5-XD1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14091092348098755" green="0.29768678545951843" blue="0.64003103971481323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Yxn-Jl-qpm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0M-mD-jwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-799" y="1"/>
+        </scene>
+        <!--FaceBook Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UsersViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FBLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +41,84 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-hx-s2E">
+                                <rect key="frame" x="75.5" y="106" width="225" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bkB-LO-XFq"/>
+                                    <constraint firstAttribute="width" constant="225" id="nFo-x0-1si"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="facebook-sign-in-button-png-26.png"/>
+                                <connections>
+                                    <action selector="FaceLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tuf-Gh-Ma8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7v6-hx-s2E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cu2-UI-qQ6"/>
+                            <constraint firstItem="7v6-hx-s2E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="eqk-uL-4hL"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="FaceBook Login" id="ffA-fi-f2P"/>
+                    <connections>
+                        <outlet property="FBButton" destination="7v6-hx-s2E" id="0DR-2L-JZe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="-0.44977511244377816"/>
+        </scene>
+        <!--Detailviewcontroller-->
+        <scene sceneID="ivX-N0-DUo">
+            <objects>
+                <viewController storyboardIdentifier="DetailView" id="zX8-BF-PIA" customClass="Detailviewcontroller" customModule="FBLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bCu-zr-keq"/>
+                        <viewControllerLayoutGuide type="bottom" id="2f3-Kz-mal"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gBz-o6-E2d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI9-MN-AI1">
+                                <rect key="frame" x="44" y="76" width="288" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQR-Y4-KYK">
+                                <rect key="frame" x="93" y="457" width="189" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2Ec-6L-UTA"/>
+                                    <constraint firstAttribute="width" constant="189" id="71u-9v-GVX"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Logout.png"/>
+                                <connections>
+                                    <action selector="LogOutFB:" destination="zX8-BF-PIA" eventType="touchUpInside" id="pKC-Qz-a24"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wI9-MN-AI1" firstAttribute="leading" secondItem="gBz-o6-E2d" secondAttribute="leadingMargin" constant="28" id="2ot-hb-0QE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wI9-MN-AI1" secondAttribute="trailing" constant="27" id="4rP-dt-SdQ"/>
+                            <constraint firstItem="2f3-Kz-mal" firstAttribute="top" secondItem="DQR-Y4-KYK" secondAttribute="bottom" constant="150" id="7kj-7J-CAo"/>
+                            <constraint firstItem="wI9-MN-AI1" firstAttribute="top" secondItem="bCu-zr-keq" secondAttribute="bottom" constant="56" id="Rru-kZ-Pe0"/>
+                            <constraint firstItem="DQR-Y4-KYK" firstAttribute="centerX" secondItem="gBz-o6-E2d" secondAttribute="centerX" id="qrh-Xh-PAe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Name_Label" destination="wI9-MN-AI1" id="T4r-Bk-1vb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ze-ec-few" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688.79999999999995" y="-0.44977511244377816"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logout.png" width="367" height="81"/>
+        <image name="facebook-sign-in-button-png-26.png" width="800" height="300"/>
+    </resources>
 </document>
